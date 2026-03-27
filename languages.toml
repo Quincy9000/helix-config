@@ -1,7 +1,8 @@
 [[language]]
 name = "tsx"
 auto-format = true
-language-servers = ["typescript-language-server", "eslint"]
+language-servers = ["typescript-language-server"]
+block-comment-tokens = {start = "{/*", end = "*/}"}
 formatter = {command= "prettier", args = ["--parser", "typescript"]}
 [language.auto-pairs]
 '<' = '>'

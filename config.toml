@@ -70,6 +70,7 @@ L = "goto_next_function"
 [keys.normal.space]
 space = "jump_backward"
 q = ":write-quit!"
+o = ":sh cargo run"
 
 [keys.normal.space.f]
 f = "file_picker"
@@ -78,6 +79,7 @@ c = ":config-open"
 
 [keys.normal.space.w]
 c = ":config-open"
+L = ":open ~/.config/helix/languages.toml"
 r = [":config-reload", ":reload-all", ":lsp-restart"]
 
 [keys.normal.space.b]
