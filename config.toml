@@ -28,7 +28,7 @@ select = "underline"
 hidden = false
 
 [editor.statusline]
-left = ["mode", "spinner"]
+left = ["mode", "spinner", "file-modification-indicator"]
 center = ["file-name", "register"]
 right = ["diagnostics", "selections", "position", "total-line-numbers", "file-encoding", "file-line-ending", "file-type"]
 separator = "|"
