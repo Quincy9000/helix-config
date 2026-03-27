@@ -1,0 +1,16 @@
+[[language]]
+name = "tsx"
+auto-format = true
+language-servers = ["typescript-language-server", "eslint"]
+formatter = {command= "prettier", args = ["--parser", "typescript"]}
+
+[[language]]
+name = "typescript"
+auto-format = true
+language-servers = ["typescript-language-server"]
+formatter = {command= "prettier", args = ["--parser", "typescript"]}
+
+[[language]]
+name = "c"
+formatter = { command = "clang-format", args = ["-style=llvm"] }
+auto-format = true

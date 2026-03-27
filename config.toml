@@ -1,0 +1,111 @@
+theme = "tokyonight_storm"
+
+[editor]
+line-number = "relative"
+scrolloff = 10
+bufferline = "always"
+cursorline = true
+color-modes = true
+idle-timeout = 10
+auto-save = true
+auto-format = true
+scroll-lines = 10
+rainbow-brackets = true
+
+[editor.indent-guides]
+render = true
+character = "|"
+
+[editor.search]
+smart-case = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name", "register"]
+right = ["diagnostics", "selections", "position", "total-line-numbers", "file-encoding", "file-line-ending", "file-type"]
+separator = "|"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+[keys.normal]
+"," = "flip_selections"
+"*" = ["search_selection", "global_search"]
+w = ["move_next_word_start", "search_selection"]
+e = ["move_next_word_end", "search_selection"]
+b = ["move_prev_word_start", "search_selection"]
+Z = {Z = ":write-quit", Q = ":quit!"}
+Q = { Q = ":quit!"}
+M = "save_selection"
+"C-s" = ":write"
+"C-v" = ":clipboard-paste-before"
+esc = ["keep_primary_selection", "collapse_selection"]
+";" = "goto_next_buffer"
+"C-y" = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
+  ':sh printf "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+"A-j" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+"A-k" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+H = "goto_prev_function"
+J = "goto_next_paragraph"
+K = "goto_prev_paragraph"
+L = "goto_next_function"
+"C-j" = "join_selections"
+"C-r" = [":config-reload", ":reload-all", ":lsp-restart"]
+
+[keys.normal.space]
+space = "jump_backward"
+q = ":write-quit!"
+
+[keys.normal.space.f]
+f = "file_picker"
+s = ":write"
+c = ":config-open"
+
+[keys.normal.space.w]
+c = ":config-open"
+r = [":config-reload", ":reload-all", ":lsp-restart"]
+
+[keys.normal.space.b]
+";" = "goto_next_buffer"
+"A-;" = "goto_previous_buffer"
+d = ":buffer-close!"      
+n = ":buffer-next"
+N = ":new"
+p = ":buffer-previous"   
+b = "buffer_picker"      
+s = ":write"
+r = [":config-reload", ":reload-all", ":lsp-restart"]
+
+[keys.select]
+"C-y" = ":clipboard-yank"
+"C-v" = ":clipboard-paste-before"
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+H = "goto_prev_function"
+J = "goto_next_paragraph"
+K = "goto_prev_paragraph"
+L = "goto_next_function"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
+[editor.lsp]
+# display-inlay-hints = true
+display-messages = true
