@@ -82,7 +82,7 @@ c = ":config-open"
 L = ":open ~/.config/helix/languages.toml"
 r = [":config-reload", ":reload-all", ":lsp-restart"]
 
-[keys.normal.space.b]
+[keys.normal.space.b] 
 ";" = "goto_next_buffer"
 "A-;" = "goto_previous_buffer"
 d = ":buffer-close!"      
