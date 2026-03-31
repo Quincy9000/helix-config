@@ -17,3 +17,10 @@ formatter = {command= "prettier", args = ["--parser", "typescript"]}
 name = "c"
 formatter = { command = "clang-format", args = ["-style=llvm"] }
 auto-format = true
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"

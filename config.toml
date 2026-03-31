@@ -1,4 +1,4 @@
-theme = "tokyonight_storm"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
@@ -48,7 +48,7 @@ w = ["move_next_word_start", "search_selection"]
 e = ["move_next_word_end", "search_selection"]
 b = ["move_prev_word_start", "search_selection"]
 Z = {Z = ":write-quit", Q = ":quit!"}
-Y = ["trim_selections",  "yank"]
+Y = ["extend_line_below","trim_selections",  "yank"]
 Q = { Q = ":quit!"}
 M = "save_selection"
 X = ["extend_line_below", "trim_selections"]
@@ -76,6 +76,7 @@ L = "goto_next_function"
 space = "jump_backward"
 q = ":write-quit!"
 o = ":sh cargo run"
+t = ":sh zellij run -f -c --x 0%% --y 70%% --width 100%% --height 30%% -- fish"
 
 [keys.normal.space.f]
 f = "file_picker"
