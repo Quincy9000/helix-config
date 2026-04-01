@@ -1,4 +1,6 @@
+# "~/.config/yazi/yazi.toml"
 theme = "tokyonight"
+
 
 [editor]
 line-number = "relative"
@@ -41,9 +43,10 @@ workspace-diagnostics = ["warning", "error"]
 [keys.normal]
 "," = "flip_selections"
 "*" = ["search_selection", "global_search"]
-t = ["select_mode", "till_prev_char"]
-f = ["select_mode", "find_till_char"]
-F = "repeat_last_motion"
+"'" = ["goto_previous_buffer"]
+f = ["extend_line_below", "select_regex"]
+t = ["expand_selection"]
+T = ["shrink_selection"]
 w = ["move_next_word_start", "search_selection"]
 e = ["move_next_word_end", "search_selection"]
 b = ["move_prev_word_start", "search_selection"]
